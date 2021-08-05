@@ -116,6 +116,10 @@ open class AxisRendererBase: Renderer
         }
         
         // Normalize interval
+        if interval.isNaN {
+            return
+        }
+
         let intervalMagnitude = pow(10.0, Double(Int(log10(interval)))).roundedToNextSignficant()
         let intervalSigDigit = Int(interval / intervalMagnitude)
         if intervalSigDigit > 5
