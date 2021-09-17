@@ -387,7 +387,9 @@ open class LegendRenderer: Renderer
                     
                     if direction == .leftToRight
                     {
-                        posX += calculatedLabelSizes[i].width
+                        if calculatedLabelSizes.count > i { //kline
+                            posX += calculatedLabelSizes[i].width
+                        }
                     }
                     
                     posX += direction == .rightToLeft ? -xEntrySpace : xEntrySpace
